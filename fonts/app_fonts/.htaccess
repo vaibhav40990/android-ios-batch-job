@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+ RewriteCond %{HTTPS} !=on
+    Options +FollowSymlinks
+  # Options +SymLinksIfOwnerMatch
+    RewriteEngine On
+  # RewriteBase /
+
+
+RewriteCond %{SCRIPT_FILENAME} !-d  
+#RewriteCond %{SCRIPT_FILENAME} !-f  
+
+directoryindex index.php
+  
+RewriteRule ^.*$ index.php [L]
+</IfModule>
